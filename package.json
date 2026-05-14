@@ -1,15 +1,14 @@
 {
   "name": "betvip-api",
   "version": "1.0.0",
-  "description": "betvip AI Predictor API",
   "type": "module",
   "main": "betvip.js",
   "scripts": {
     "start": "node betvip.js"
   },
   "dependencies": {
-    "fastify": "^4.28.1",
-    "@fastify/cors": "^10.0.1",
+    "fastify": "^4.29.1",
+    "@fastify/cors": "^8.5.0",
     "node-fetch": "^3.3.2"
   }
 }
