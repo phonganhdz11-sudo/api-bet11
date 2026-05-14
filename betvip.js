@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import fetch from "node-fetch";
 
 // --- CẤU HÌNH ---
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const API_URL = "https://wtxmd52.macminim6.online/v1/txmd5/sessions";
 
 // --- GLOBAL STATE ---
@@ -1333,27 +1333,9 @@ Stack: ${err.stack}
         process.exit(1);
     }
 
-    let publicIP = "0.0.0.0";
-    try {
-        const res = await fetch("https://ifconfig.me/ip");
-        publicIP = (await res.text()).trim();
-    } catch (e) {
-        console.error("❌ Lỗi lấy public IP:", e.message);
-    }
-
-    console.log("\n🚀 AI Tài Xỉu MD5 Pro - Pattern Master đã khởi động!");
-    console.log(`   ➜ Local:   http://localhost:${PORT}/`);
-    console.log(`   ➜ Network: http://${publicIP}:${PORT}/\n`);
-    console.log("📌 Các API endpoints:");
-    console.log(`   ➜ GET /api/dudoan/md5   → http://${publicIP}:${PORT}/api/taixiumd5/lc79`);
-    console.log(`   ➜ GET /api/dudoan/history   → http://${publicIP}:${PORT}/api/dudoan/history`);
-    console.log("\n🔧 Hệ thống AI Pattern Master với 10 thuật toán:");
-    ALL_ALGS.forEach((alg, i) => console.log(`   ${i+1}. ${alg.id}`));
-    console.log("\n🎯 Nhận diện 15+ mẫu cầu phức tạp:");
-    console.log("   • Cầu 1-1, 2-2, 3-3, 4-4");
-    console.log("   • Cầu 2-1-2, 1-2-1, 3-2-3, 4-2-4");
-    console.log("   • Cầu bệt dài, cầu ngắn, cầu đảo");
-    console.log("   • AI thích nghi theo cầu & bẻ cầu thông minh");
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📌 API: /api/dudoan/md5`);
+    console.log(`📌 HISTORY: /api/dudoan/history`);
 };
 
 start();
