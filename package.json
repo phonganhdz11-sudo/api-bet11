@@ -1,0 +1,13 @@
+{
+  "name": "betvip-api",
+  "version": "1.0.0",
+  "description": "betvip AI Predictor API",
+  "main": "betvip.js",
+  "scripts": {
+    "start": "node betvip.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "express": "^4.19.2"
+  }
+}
